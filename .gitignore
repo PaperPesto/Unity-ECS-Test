@@ -2,3 +2,6 @@
 Packages
 Temp
 Library
+obj/
+Logs/
+ProjectSettings/
