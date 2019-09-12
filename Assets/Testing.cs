@@ -15,7 +15,7 @@ public class Testing : MonoBehaviour
 
         EntityArchetype entityArchetype = entityManager.CreateArchetype(
             typeof(LevelComponent),
-            typeof(Position),
+            typeof(Translation),
             typeof(RenderMesh),
             typeof(LocalToWorld),
             typeof(MoveSpeedComponent)
@@ -31,7 +31,7 @@ public class Testing : MonoBehaviour
         {
             Entity entity = entityArray[i];
             entityManager.SetComponentData(entity, new LevelComponent { Level = Random.Range(10, 20) });
-            entityManager.SetComponentData(entity, new Position { Value = new Unity.Mathematics.float3(Random.Range(-8, 8f), Random.Range(-5, 5f), 0) });
+            entityManager.SetComponentData(entity, new Translation { Value = new Unity.Mathematics.float3(Random.Range(-8, 8f), Random.Range(-5, 5f), 0) });
             entityManager.SetComponentData(entity, new MoveSpeedComponent { Speed = Random.Range(1f, 10f) });
 
             entityManager.SetSharedComponentData(entity, new RenderMesh

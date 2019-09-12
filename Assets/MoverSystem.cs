@@ -8,7 +8,7 @@ public class MoverSystem : ComponentSystem
 {
     protected override void OnUpdate()
     {
-        ForEach((ref Position position, ref MoveSpeedComponent moveSpeedComponent) =>
+        Entities.ForEach((ref Translation position, ref MoveSpeedComponent moveSpeedComponent) =>
         {
             position.Value.y += moveSpeedComponent.Speed * Time.deltaTime;
 
